@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5268728-1B59-4D23-AED0-138281FB4EC0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Layered.Services</RootNamespace>
+    <AssemblyName>Layered.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="PersonService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Layered.Core\Layered.Core.csproj">
+      <Project>{730e6f6e-5bdd-49ea-ae68-73ddb6f18f67}</Project>
+      <Name>Layered.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Layered.EF\Layered.EF.csproj">
+      <Project>{ac1148d2-3a18-460f-aebd-5f015ec19be9}</Project>
+      <Name>Layered.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Layered.Extensions\Layered.Extensions.csproj">
+      <Project>{834BE211-B862-488E-A135-2F97899C0CB5}</Project>
+      <Name>Layered.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Layered.Repository\Layered.Repository.csproj">
+      <Project>{526A1B3F-2852-44A3-B4F4-10C868C0E3CB}</Project>
+      <Name>Layered.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Layered.ServiceModel\Layered.ServiceModel.csproj">
+      <Project>{C346C232-4968-44D4-8A62-A308BE72216C}</Project>
+      <Name>Layered.ServiceModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LayeredDemo.ViewModels\LayeredDemo.ViewModels.csproj">
+      <Project>{25B388E6-B54F-4AFE-9614-F069C409B63C}</Project>
+      <Name>LayeredDemo.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
